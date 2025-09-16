@@ -302,7 +302,6 @@ CIRCUIT_LAYOUTS_REAL = {
 
 # Data cleaning function
 def clean_numeric_column(series):
-    """Clean numeric columns by replacing \N and invalid values with NaN"""
     if series.dtype == 'object':
         series = series.replace('\\N', np.nan)
         series = pd.to_numeric(series, errors='coerce')
